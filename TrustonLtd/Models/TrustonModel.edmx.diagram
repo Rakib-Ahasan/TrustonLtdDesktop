@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="158b6212ba9046de9bc1780c729a18c3" Name="Diagram1">
+        <EntityTypeShape EntityType="TrustonModel.BuyEmbroideryOrnaOrThreePiece" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrustonModel.BuyPrideOrYearn" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrustonModel.Collection" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrustonModel.Cost" Width="1.5" PointX="2.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrustonModel.Customer" Width="1.5" PointX="3.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrustonModel.CustomerPayment" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrustonModel.Distribution" Width="1.5" PointX="6" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrustonModel.Product" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrustonModel.Sale" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrustonModel.StockIn" Width="1.5" PointX="3" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrustonModel.Worker" Width="1.5" PointX="3.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TrustonModel.WorkerPayment" Width="1.5" PointX="6" PointY="17.75" IsExpanded="true" />
+        <AssociationConnector Association="TrustonModel.FK__BuyEmbroi__Produ__5CA1C101" ManuallyRouted="false" />
+        <AssociationConnector Association="TrustonModel.FK__Collectio__Produ__3A4CA8FD" ManuallyRouted="false" />
+        <AssociationConnector Association="TrustonModel.FK__Collectio__Worke__395884C4" ManuallyRouted="false" />
+        <AssociationConnector Association="TrustonModel.FK__CustomerP__Custo__59C55456" ManuallyRouted="false" />
+        <AssociationConnector Association="TrustonModel.FK__Sales__CustomerI__690797E6" ManuallyRouted="false" />
+        <AssociationConnector Association="TrustonModel.FK__Distribut__Produ__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="TrustonModel.FK__Distribut__Worke__3587F3E0" ManuallyRouted="false" />
+        <AssociationConnector Association="TrustonModel.FK__Sales__ProductId__69FBBC1F" ManuallyRouted="false" />
+        <AssociationConnector Association="TrustonModel.FK_StockIn_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="TrustonModel.FK__WorkerPay__Worke__56E8E7AB" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

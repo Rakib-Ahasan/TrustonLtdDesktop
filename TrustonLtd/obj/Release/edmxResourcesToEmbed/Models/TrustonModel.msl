@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TrustonModelStoreContainer" CdmEntityContainer="TrustonEntities">
+    <EntitySetMapping Name="BuyEmbroideryOrnaOrThreePieces">
+      <EntityTypeMapping TypeName="TrustonModel.BuyEmbroideryOrnaOrThreePiece">
+        <MappingFragment StoreEntitySet="BuyEmbroideryOrnaOrThreePiece">
+          <ScalarProperty Name="BuyEmbroideryOrnaOrThreePieceId" ColumnName="BuyEmbroideryOrnaOrThreePieceId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Piece" ColumnName="Piece" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuyPrideOrYearns">
+      <EntityTypeMapping TypeName="TrustonModel.BuyPrideOrYearn">
+        <MappingFragment StoreEntitySet="BuyPrideOrYearn">
+          <ScalarProperty Name="BuyPrideOrYearnId" ColumnName="BuyPrideOrYearnId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TypeOfProduct" ColumnName="TypeOfProduct" />
+          <ScalarProperty Name="Piece" ColumnName="Piece" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Collections">
+      <EntityTypeMapping TypeName="TrustonModel.Collection">
+        <MappingFragment StoreEntitySet="Collection">
+          <ScalarProperty Name="CollectionId" ColumnName="CollectionId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="TotalDistributed" ColumnName="TotalDistributed" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Piece" ColumnName="Piece" />
+          <ScalarProperty Name="Return" ColumnName="Return" />
+          <ScalarProperty Name="Remaining" ColumnName="Remaining" />
+          <ScalarProperty Name="TotalCollected" ColumnName="TotalCollected" />
+          <ScalarProperty Name="PayableDeposit" ColumnName="PayableDeposit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Costs">
+      <EntityTypeMapping TypeName="TrustonModel.Cost">
+        <MappingFragment StoreEntitySet="Cost">
+          <ScalarProperty Name="CostId" ColumnName="CostId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="CostBy" ColumnName="CostBy" />
+          <ScalarProperty Name="TypeOfCost" ColumnName="TypeOfCost" />
+          <ScalarProperty Name="CostAmount" ColumnName="CostAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="TrustonModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="ReferenceName" ColumnName="ReferenceName" />
+          <ScalarProperty Name="RefereceContact" ColumnName="RefereceContact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerPayments">
+      <EntityTypeMapping TypeName="TrustonModel.CustomerPayment">
+        <MappingFragment StoreEntitySet="CustomerPayment">
+          <ScalarProperty Name="CustomerPaymentId" ColumnName="CustomerPaymentId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="TotalPreviousDue" ColumnName="TotalPreviousDue" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="Due" ColumnName="Due" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributions">
+      <EntityTypeMapping TypeName="TrustonModel.Distribution">
+        <MappingFragment StoreEntitySet="Distribution">
+          <ScalarProperty Name="DistributionId" ColumnName="DistributionId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="Distributed" ColumnName="Distributed" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Piece" ColumnName="Piece" />
+          <ScalarProperty Name="TotalDistributed" ColumnName="TotalDistributed" />
+          <ScalarProperty Name="Remaining" ColumnName="Remaining" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="TrustonModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="TypeOfProduct" ColumnName="TypeOfProduct" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="RateOfAmount" ColumnName="RateOfAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="TrustonModel.Sale">
+        <MappingFragment StoreEntitySet="Sales">
+          <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="PreviousDue" ColumnName="PreviousDue" />
+          <ScalarProperty Name="SalesBy" ColumnName="SalesBy" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Piece" ColumnName="Piece" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="NetTotalBill" ColumnName="NetTotalBill" />
+          <ScalarProperty Name="ReturnProductId" ColumnName="ReturnProductId" />
+          <ScalarProperty Name="ReturnRate" ColumnName="ReturnRate" />
+          <ScalarProperty Name="ReturnPiece" ColumnName="ReturnPiece" />
+          <ScalarProperty Name="TotalReturnPrice" ColumnName="TotalReturnPrice" />
+          <ScalarProperty Name="TotalBill" ColumnName="TotalBill" />
+          <ScalarProperty Name="LessPrice" ColumnName="LessPrice" />
+          <ScalarProperty Name="Pay" ColumnName="Pay" />
+          <ScalarProperty Name="Due" ColumnName="Due" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockIns">
+      <EntityTypeMapping TypeName="TrustonModel.StockIn">
+        <MappingFragment StoreEntitySet="StockIn">
+          <ScalarProperty Name="StockInId" ColumnName="StockInId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Piece" ColumnName="Piece" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers">
+      <EntityTypeMapping TypeName="TrustonModel.Worker">
+        <MappingFragment StoreEntitySet="Worker">
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="ReferenceName" ColumnName="ReferenceName" />
+          <ScalarProperty Name="RefereceContact" ColumnName="RefereceContact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkerPayments">
+      <EntityTypeMapping TypeName="TrustonModel.WorkerPayment">
+        <MappingFragment StoreEntitySet="WorkerPayment">
+          <ScalarProperty Name="WorkerPaymentId" ColumnName="WorkerPaymentId" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="PayableAmount" ColumnName="PayableAmount" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="RepayableAmount" ColumnName="RepayableAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrustonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BuyEmbroideryOrnaOrThreePiece">
+    <Key>
+      <PropertyRef Name="BuyEmbroideryOrnaOrThreePieceId" />
+    </Key>
+    <Property Name="BuyEmbroideryOrnaOrThreePieceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Piece" Type="Int32" Nullable="false" />
+    <Property Name="TotalAmount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__BuyEmbroi__Produ__5CA1C101" FromRole="BuyEmbroideryOrnaOrThreePiece" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="BuyPrideOrYearn">
+    <Key>
+      <PropertyRef Name="BuyPrideOrYearnId" />
+    </Key>
+    <Property Name="BuyPrideOrYearnId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TypeOfProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Piece" Type="Int32" Nullable="false" />
+    <Property Name="Rate" Type="Int32" Nullable="false" />
+    <Property Name="TotalAmount" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Collection">
+    <Key>
+      <PropertyRef Name="CollectionId" />
+    </Key>
+    <Property Name="CollectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WorkerId" Type="Int32" Nullable="false" />
+    <Property Name="TotalDistributed" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Piece" Type="Int32" Nullable="false" />
+    <Property Name="Return" Type="Int32" Nullable="false" />
+    <Property Name="Remaining" Type="Int32" Nullable="false" />
+    <Property Name="TotalCollected" Type="Int32" Nullable="false" />
+    <Property Name="PayableDeposit" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Collectio__Produ__3A4CA8FD" FromRole="Collection" ToRole="Product" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK__Collectio__Worke__395884C4" FromRole="Collection" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Cost">
+    <Key>
+      <PropertyRef Name="CostId" />
+    </Key>
+    <Property Name="CostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CostBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TypeOfCost" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CostAmount" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contact" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReferenceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RefereceContact" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CustomerPayments" Relationship="Self.FK__CustomerP__Custo__59C55456" FromRole="Customer" ToRole="CustomerPayment" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK__Sales__CustomerI__690797E6" FromRole="Customer" ToRole="Sales" />
+  </EntityType>
+  <EntityType Name="CustomerPayment">
+    <Key>
+      <PropertyRef Name="CustomerPaymentId" />
+    </Key>
+    <Property Name="CustomerPaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="TotalPreviousDue" Type="Int32" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Payment" Type="Int32" Nullable="false" />
+    <Property Name="Due" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__CustomerP__Custo__59C55456" FromRole="CustomerPayment" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Distribution">
+    <Key>
+      <PropertyRef Name="DistributionId" />
+    </Key>
+    <Property Name="DistributionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WorkerId" Type="Int32" Nullable="false" />
+    <Property Name="Distributed" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Piece" Type="Int32" Nullable="false" />
+    <Property Name="TotalDistributed" Type="Int32" Nullable="false" />
+    <Property Name="Remaining" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Distribut__Produ__367C1819" FromRole="Distribution" ToRole="Product" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK__Distribut__Worke__3587F3E0" FromRole="Distribution" ToRole="Worker" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeOfProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RateOfAmount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BuyEmbroideryOrnaOrThreePieces" Relationship="Self.FK__BuyEmbroi__Produ__5CA1C101" FromRole="Product" ToRole="BuyEmbroideryOrnaOrThreePiece" />
+    <NavigationProperty Name="Collections" Relationship="Self.FK__Collectio__Produ__3A4CA8FD" FromRole="Product" ToRole="Collection" />
+    <NavigationProperty Name="Distributions" Relationship="Self.FK__Distribut__Produ__367C1819" FromRole="Product" ToRole="Distribution" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK__Sales__ProductId__69FBBC1F" FromRole="Product" ToRole="Sales" />
+    <NavigationProperty Name="StockIns" Relationship="Self.FK_StockIn_Product" FromRole="Product" ToRole="StockIn" />
+  </EntityType>
+  <EntityType Name="Sale">
+    <Key>
+      <PropertyRef Name="SalesId" />
+    </Key>
+    <Property Name="SalesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="PreviousDue" Type="Int32" Nullable="false" />
+    <Property Name="SalesBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Piece" Type="Int32" Nullable="false" />
+    <Property Name="Rate" Type="Int32" Nullable="false" />
+    <Property Name="NetTotalBill" Type="Int32" Nullable="false" />
+    <Property Name="ReturnProductId" Type="Int32" Nullable="false" />
+    <Property Name="ReturnRate" Type="Int32" Nullable="false" />
+    <Property Name="ReturnPiece" Type="Int32" Nullable="false" />
+    <Property Name="TotalReturnPrice" Type="Int32" Nullable="false" />
+    <Property Name="TotalBill" Type="Int32" Nullable="false" />
+    <Property Name="LessPrice" Type="Int32" Nullable="false" />
+    <Property Name="Pay" Type="Int32" Nullable="false" />
+    <Property Name="Due" Type="Int32" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Sales__CustomerI__690797E6" FromRole="Sales" ToRole="Customer" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Sales__ProductId__69FBBC1F" FromRole="Sales" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="StockIn">
+    <Key>
+      <PropertyRef Name="StockInId" />
+    </Key>
+    <Property Name="StockInId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Piece" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_StockIn_Product" FromRole="StockIn" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Worker">
+    <Key>
+      <PropertyRef Name="WorkerId" />
+    </Key>
+    <Property Name="WorkerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contact" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReferenceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RefereceContact" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Collections" Relationship="Self.FK__Collectio__Worke__395884C4" FromRole="Worker" ToRole="Collection" />
+    <NavigationProperty Name="Distributions" Relationship="Self.FK__Distribut__Worke__3587F3E0" FromRole="Worker" ToRole="Distribution" />
+    <NavigationProperty Name="WorkerPayments" Relationship="Self.FK__WorkerPay__Worke__56E8E7AB" FromRole="Worker" ToRole="WorkerPayment" />
+  </EntityType>
+  <EntityType Name="WorkerPayment">
+    <Key>
+      <PropertyRef Name="WorkerPaymentId" />
+    </Key>
+    <Property Name="WorkerPaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorkerId" Type="Int32" Nullable="false" />
+    <Property Name="PayableAmount" Type="Int32" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Payment" Type="Int32" Nullable="false" />
+    <Property Name="RepayableAmount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Worker" Relationship="Self.FK__WorkerPay__Worke__56E8E7AB" FromRole="WorkerPayment" ToRole="Worker" />
+  </EntityType>
+  <Association Name="FK__BuyEmbroi__Produ__5CA1C101">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="BuyEmbroideryOrnaOrThreePiece" Type="Self.BuyEmbroideryOrnaOrThreePiece" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="BuyEmbroideryOrnaOrThreePiece">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Collectio__Produ__3A4CA8FD">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Collection" Type="Self.Collection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Collection">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Collectio__Worke__395884C4">
+    <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+    <End Role="Collection" Type="Self.Collection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="WorkerId" />
+      </Principal>
+      <Dependent Role="Collection">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CustomerP__Custo__59C55456">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="CustomerPayment" Type="Self.CustomerPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="CustomerPayment">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sales__CustomerI__690797E6">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Distribut__Produ__367C1819">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Distribution" Type="Self.Distribution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Distribution">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Distribut__Worke__3587F3E0">
+    <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+    <End Role="Distribution" Type="Self.Distribution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="WorkerId" />
+      </Principal>
+      <Dependent Role="Distribution">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sales__ProductId__69FBBC1F">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Sales">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockIn_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="StockIn" Type="Self.StockIn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="StockIn">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__WorkerPay__Worke__56E8E7AB">
+    <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+    <End Role="WorkerPayment" Type="Self.WorkerPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="WorkerId" />
+      </Principal>
+      <Dependent Role="WorkerPayment">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TrustonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BuyEmbroideryOrnaOrThreePieces" EntityType="Self.BuyEmbroideryOrnaOrThreePiece" />
+    <EntitySet Name="BuyPrideOrYearns" EntityType="Self.BuyPrideOrYearn" />
+    <EntitySet Name="Collections" EntityType="Self.Collection" />
+    <EntitySet Name="Costs" EntityType="Self.Cost" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="CustomerPayments" EntityType="Self.CustomerPayment" />
+    <EntitySet Name="Distributions" EntityType="Self.Distribution" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Sales" EntityType="Self.Sale" />
+    <EntitySet Name="StockIns" EntityType="Self.StockIn" />
+    <EntitySet Name="Workers" EntityType="Self.Worker" />
+    <EntitySet Name="WorkerPayments" EntityType="Self.WorkerPayment" />
+    <AssociationSet Name="FK__BuyEmbroi__Produ__5CA1C101" Association="Self.FK__BuyEmbroi__Produ__5CA1C101">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="BuyEmbroideryOrnaOrThreePiece" EntitySet="BuyEmbroideryOrnaOrThreePieces" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Collectio__Produ__3A4CA8FD" Association="Self.FK__Collectio__Produ__3A4CA8FD">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Collection" EntitySet="Collections" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Collectio__Worke__395884C4" Association="Self.FK__Collectio__Worke__395884C4">
+      <End Role="Worker" EntitySet="Workers" />
+      <End Role="Collection" EntitySet="Collections" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CustomerP__Custo__59C55456" Association="Self.FK__CustomerP__Custo__59C55456">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="CustomerPayment" EntitySet="CustomerPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sales__CustomerI__690797E6" Association="Self.FK__Sales__CustomerI__690797E6">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Distribut__Produ__367C1819" Association="Self.FK__Distribut__Produ__367C1819">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Distribution" EntitySet="Distributions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Distribut__Worke__3587F3E0" Association="Self.FK__Distribut__Worke__3587F3E0">
+      <End Role="Worker" EntitySet="Workers" />
+      <End Role="Distribution" EntitySet="Distributions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sales__ProductId__69FBBC1F" Association="Self.FK__Sales__ProductId__69FBBC1F">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Sales" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockIn_Product" Association="Self.FK_StockIn_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="StockIn" EntitySet="StockIns" />
+    </AssociationSet>
+    <AssociationSet Name="FK__WorkerPay__Worke__56E8E7AB" Association="Self.FK__WorkerPay__Worke__56E8E7AB">
+      <End Role="Worker" EntitySet="Workers" />
+      <End Role="WorkerPayment" EntitySet="WorkerPayments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
